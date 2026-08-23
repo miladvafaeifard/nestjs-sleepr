@@ -1,0 +1,23 @@
+@PORT = 5005
+### Get Reservations
+GET http://localhost:{{PORT}}/reservations
+
+### Create a Reservation
+POST http://localhost:{{PORT}}/reservations
+Content-Type: application/json
+
+{
+	"startDate": "2026-09-01",
+	"endDate": "2026-09-05",
+	"userId": "user_123",
+	"placeId": "place_456",
+	"invoiceId": "invoice_789"
+}
+
+> {%
+  client.global.set("reservationId", response.body._id);
+%}
+
+### GET Reservations by ID
+
+GET http://localhost:{{PORT}}/reservations/{{reservationId}}

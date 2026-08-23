@@ -17,7 +17,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./apps/sleepr/test/jest-e2e.json"
+    "test:e2e": "jest --config ./apps/sleepr/test/jest-e2e.json",
+    "test:http": "httpyac ./apps/reservations/test/**/*.http"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
@@ -26,6 +27,8 @@
     "@nestjs/mapped-types": "*",
     "@nestjs/mongoose": "^11.0.4",
     "@nestjs/platform-express": "^11.0.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1",
     "joi": "^18.2.5",
     "mongoose": "^9.9.3",
     "pino-http": "^11.0.0",
