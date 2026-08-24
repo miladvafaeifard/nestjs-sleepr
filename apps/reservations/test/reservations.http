@@ -1,4 +1,4 @@
-@PORT = 5005
+@PORT = 3000
 ### Get Reservations
 GET http://localhost:{{PORT}}/reservations
 
@@ -7,11 +7,11 @@ POST http://localhost:{{PORT}}/reservations
 Content-Type: application/json
 
 {
-	"startDate": "2026-09-01",
-	"endDate": "2026-09-05",
-	"userId": "user_123",
-	"placeId": "place_456",
-	"invoiceId": "invoice_789"
+	"startDate": "2026-02-01",
+	"endDate": "2026-02-05",
+	"userId": "user_2222",
+	"placeId": "place_2222",
+	"invoiceId": "invoice_2222"
 }
 
 > {%
