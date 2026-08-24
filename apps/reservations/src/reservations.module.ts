@@ -4,7 +4,7 @@ import { ReservationsService } from './reservations.service';
 import { ReservationsController } from './reservations.controller';
 import { ReservationsRepository } from './reservations.repository';
 import { ReservationSchema, ReservationDocument } from './entities/reservation.schema';
-import { LoggerModule } from '@app/common/logger';
+import { LoggerModule } from '@app/common';
 
 @Module({
   controllers: [ReservationsController],
