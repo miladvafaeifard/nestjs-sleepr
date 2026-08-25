@@ -10,7 +10,7 @@ async function bootstrap() {
     const logger = app.get(Logger);
     app.useLogger(logger);
     const configService = app.get(ConfigService);
-    const port = configService.getOrThrow<number>('AUTH_PORT');
+    const port = configService.getOrThrow<number>('PORT');
     await app.listen(port);
     logger.log(`http listening port ${port}`);
 }

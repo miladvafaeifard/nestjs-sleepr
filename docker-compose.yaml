@@ -5,6 +5,8 @@ services:
       dockerfile: ./apps/reservations/DockerFile
       target: development
     command: pnpm run start:dev reservations
+    env_file:
+      - ./apps/reservations/.env
     ports:
       - 3000:3000
     volumes:
@@ -12,9 +14,6 @@ services:
       - /usr/src/app/node_modules
     depends_on:
       - mongo
-    environment:
-      - RESERVATIONS_PORT=3000
-      - MONGODB_URI=mongodb://mongo:27017/sleepr-mongo
 
   auth:
     build:
@@ -22,6 +21,8 @@ services:
       dockerfile: ./apps/auth/DockerFile
       target: development
     command: pnpm run start:dev auth
+    env_file:
+      - ./apps/auth/.env
     ports:
       - 3001:3001
     volumes:
@@ -29,9 +30,6 @@ services:
       - /usr/src/app/node_modules
     depends_on:
       - mongo
-    environment:
-      - AUTH_PORT=3001
-      - MONGODB_URI=mongodb://mongo:27017/sleepr-mongo
 
   mongo:
     image: mongo
