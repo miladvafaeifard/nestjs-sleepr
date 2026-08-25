@@ -1,3 +1,4 @@
 allowBuilds:
   protobufjs: false
   unrs-resolver: false
+  allowBuilds: true

@@ -7,7 +7,6 @@ import { UserDocument, UserSchema } from './entities/user.schema';
 
 @Module({
   imports: [
-    // LoggerModule,
     DatabaseModule,
     DatabaseModule.forFeature([
       { name: UserDocument.name, schema: UserSchema }
