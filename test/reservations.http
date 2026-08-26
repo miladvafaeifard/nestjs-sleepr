@@ -1,4 +1,24 @@
 @PORT = 3000
+
+### Create a User
+POST http://localhost:{{PORT}}/users
+Content-Type: application/json
+
+{
+  "password": "password_2222",
+  "email": "user_2222@example.com"
+}
+
+### Post Login
+POST http://localhost:{{PORT}}/auth/login
+Content-Type: application/json
+
+{
+  "username": "user_2222",
+  "password": "password_2222"
+}
+
+
 ### Get Reservations
 GET http://localhost:{{PORT}}/reservations
 

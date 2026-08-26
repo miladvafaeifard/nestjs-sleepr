@@ -25,6 +25,16 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
         return document;
     }
 
+    async findOneOrNull(queryFilter: QueryFilter<TDocument>): Promise<TDocument | null> {
+        const document = await this.model.findOne(queryFilter).lean(true);
+        if (!document) {
+            this.logger.warn('Document not found with queryFilter', queryFilter);
+            return null;
+        }
+        
+        return document;
+    }
+
     async find(queryFilter: QueryFilter<TDocument>): Promise<TDocument[]> {
         return this.model.find(queryFilter).lean(true);
     }

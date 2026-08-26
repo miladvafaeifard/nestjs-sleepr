@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { ConfigService } from '@nestjs/config';
 import { ValidationPipe } from '@nestjs/common';
-import { Logger } from 'pino-nestjs';
+import { Logger } from 'nestjs-pino';
 import { AuthModule } from './auth.module';
 
 async function bootstrap() {
