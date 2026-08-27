@@ -21,3 +21,14 @@ Content-Type: application/json
   "email": "{{Email}}",
   "password": "{{Password}}"
 }
+
+### Get User By Id
+
+@Access_Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YThmNGI3NWE4YzNkYTJmZDJjMWI3YzciLCJpYXQiOjE3ODc4NjQ2NTksImV4cCI6MTc4Nzg2ODI1OX0.60FssQx-8b-ySl3ECvjHN36jqB_yTorw2vBCo_J_O14
+GET http://localhost:{{PORT}}/users
+Authorization: Bearer {{Access_Token}}
+
+{
+  "email": "{{Email}}",
+  "password": "{{Password}}"
+}
