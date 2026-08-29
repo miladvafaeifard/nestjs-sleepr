@@ -5,7 +5,7 @@ import { ExtractJwt, Strategy } from 'passport-jwt';
 
 import { UsersService } from '../users/users.service';
 import { TokenPayload } from './token-payload.type';
-import type { UserDocument } from '../users/entities/user.schema';
+import type { UserDocument } from '../../../../libs/common/src/entities/user.schema';
 
 interface JwtPayload {
 	sub: string;

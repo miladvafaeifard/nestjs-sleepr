@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import type { Response } from 'express';
-import { UserDocument } from './users/entities/user.schema';
+import { UserDocument } from '../../../libs/common/src/entities/user.schema';
 @Injectable()
 export class AuthService {
   constructor(

@@ -1,11 +1,11 @@
 import { Controller, Get, Post, UseGuards, Res } from '@nestjs/common';
-import type { Response } from 'express';
-import { AuthService } from './auth.service';
-import { LocalAuthGuard } from './guards/local-auth.guard';
-import { UserDocument } from './users/entities/user.schema';
-import { CurrentUser } from './decorators/current-user.decorator';
-import { JwtAuthGuard } from './guards/jwt-auth.guard';
 import { MessagePattern, Payload } from '@nestjs/microservices';
+import type { Response } from 'express';
+
+import { CurrentUser, UserDocument } from '@app/common';
+import { AuthService } from './auth.service';
+import { JwtAuthGuard } from './guards/jwt-auth.guard';
+import { LocalAuthGuard } from './guards/local-auth.guard';
 
 @Controller('auth')
 export class AuthController {

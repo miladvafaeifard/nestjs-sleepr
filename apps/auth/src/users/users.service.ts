@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import * as bcrypt from 'bcrypt';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UsersRepository } from './users.repository';
-import { UserDocument } from './entities/user.schema';
+import { UserDocument } from '../../../../libs/common/src/entities/user.schema';
 import { GetUserDto } from './dto/get.user.dto';
 
 @Injectable()

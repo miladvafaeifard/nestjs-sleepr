@@ -22,6 +22,7 @@ async function bootstrap() {
     app.useLogger(logger);
     const configService = app.get(ConfigService);
     const port = configService.getOrThrow<number>('PORT');
+    await app.startAllMicroservices();
     await app.listen(port);
     logger.log(`http listening port ${port}`);
 }

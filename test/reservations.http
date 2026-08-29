@@ -4,9 +4,8 @@
 GET http://localhost:{{PORT}}/reservations
 
 ### Create a Reservation
-@Access_Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YThmNGI3NWE4YzNkYTJmZDJjMWI3YzciLCJpYXQiOjE3ODc4NjQ2NTksImV4cCI6MTc4Nzg2ODI1OX0.60FssQx-8b-ySl3ECvjHN36jqB_yTorw2vBCo_J_O14
+@Access_Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YThmNGI3NWE4YzNkYTJmZDJjMWI3YzciLCJpYXQiOjE3ODgwMjIyOTEsImV4cCI6MTc4ODAyNTg5MX0.8bjHBZ4RAYXyLJ5dzzaCfqCTF9WWDzVmrgVcqIr_SyE
 POST http://localhost:{{PORT}}/reservations
-Authorization: Bearer {{Access_Token}}
 Content-Type: application/json
 
 {
