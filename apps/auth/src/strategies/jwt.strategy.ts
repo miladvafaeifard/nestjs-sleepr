@@ -16,7 +16,9 @@ interface JwtPayload {
 export class JwtStrategy extends PassportStrategy(Strategy) {
 	constructor(private readonly configService: ConfigService, private readonly usersService: UsersService) {
 		super({
-			jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+			jwtFromRequest: ExtractJwt.fromExtractors([
+				(request) => request?.cookies?.Authentication || request?.Authentication
+			]),
 			ignoreExpiration: false,
 			secretOrKey: configService.getOrThrow<string>('JWT_SECRET'),
 		});
