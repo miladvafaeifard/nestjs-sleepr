@@ -16,7 +16,11 @@ export class ReservationsService {
 
   async create(createReservationDto: CreateReservationDto, user: UserDto) {
     return this.paymentService
-      .send('createPayment', { amount: 1000, currency: 'huf' })
+      .send('createPayment', {
+        amount: 1000,
+        currency: 'huf',
+        email: user.email,
+      })
       .pipe(
         tap((paymentIntent) => {
           if (!paymentIntent) {

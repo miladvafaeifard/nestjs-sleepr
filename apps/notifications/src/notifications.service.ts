@@ -5,10 +5,6 @@ import type { PaymentCompletedEventDto } from '@app/common';
 export class NotificationsService {
   private readonly logger = new Logger(NotificationsService.name);
 
-  getHello(): string {
-    return 'Hello World!';
-  }
-
   notifyPaymentCompleted(payment: PaymentCompletedEventDto): void {
     this.logger.log(
       `Payment ${payment.paymentIntentId} completed: ${payment.amount} ${payment.currency} (${payment.status})`,
