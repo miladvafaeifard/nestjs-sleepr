@@ -26,6 +26,15 @@
         "tsConfigPath": "libs/common/tsconfig.lib.json"
       }
     },
+    "norifications": {
+      "type": "application",
+      "root": "apps/norifications",
+      "entryFile": "main",
+      "sourceRoot": "apps/norifications/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/norifications/tsconfig.app.json"
+      }
+    },
     "payment": {
       "type": "application",
       "root": "apps/payment",

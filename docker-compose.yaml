@@ -45,6 +45,20 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
 
+  norifications:
+    build:
+      context: .
+      dockerfile: ./apps/norifications/DockerFile
+      target: development
+    command: pnpm run start:dev norifications
+    env_file:
+      - ./apps/norifications/.env
+    ports:
+      - 3004:3004
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
   mongo:
     image: mongo
     ports:
