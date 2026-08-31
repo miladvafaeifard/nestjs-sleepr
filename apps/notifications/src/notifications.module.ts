@@ -3,8 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 import { LoggerModule } from '@app/common';
 import Joi from 'joi';
 
-import { NorificationsController } from './norifications.controller';
-import { NorificationsService } from './norifications.service';
+import { NotificationsController } from './notifications.controller';
+import { NotificationsService } from './notifications.service';
 
 @Module({
   imports: [
@@ -12,11 +12,11 @@ import { NorificationsService } from './norifications.service';
     ConfigModule.forRoot({
       isGlobal: true,
       validationSchema: Joi.object({
-        NORIFICATIONS_PORT: Joi.number().required(),
+        NOTIFICATIONS_PORT: Joi.number().required(),
       }),
     }),
   ],
-  controllers: [NorificationsController],
-  providers: [NorificationsService],
+  controllers: [NotificationsController],
+  providers: [NotificationsService],
 })
-export class NorificationsModule {}
+export class NotificationsModule {}

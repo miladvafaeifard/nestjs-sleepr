@@ -45,14 +45,14 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
 
-  norifications:
+  notifications:
     build:
       context: .
-      dockerfile: ./apps/norifications/DockerFile
+      dockerfile: ./apps/notifications/DockerFile
       target: development
-    command: pnpm run start:dev norifications
+    command: pnpm run start:dev notifications
     env_file:
-      - ./apps/norifications/.env
+      - ./apps/notifications/.env
     ports:
       - 3004:3004
     volumes:

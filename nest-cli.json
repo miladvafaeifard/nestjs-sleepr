@@ -26,13 +26,13 @@
         "tsConfigPath": "libs/common/tsconfig.lib.json"
       }
     },
-    "norifications": {
+    "notifications": {
       "type": "application",
-      "root": "apps/norifications",
+      "root": "apps/notifications",
       "entryFile": "main",
-      "sourceRoot": "apps/norifications/src",
+      "sourceRoot": "apps/notifications/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/norifications/tsconfig.app.json"
+        "tsConfigPath": "apps/notifications/tsconfig.app.json"
       }
     },
     "payment": {
