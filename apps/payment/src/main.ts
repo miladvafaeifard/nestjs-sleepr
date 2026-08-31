@@ -12,10 +12,10 @@ async function bootstrap() {
     transport: Transport.TCP,
     options: {
       host: '0.0.0.0',
-      port: configService.getOrThrow<number>('PAYMENTS_SERVICE_PORT'),
+      port: configService.getOrThrow<number>('PAYMENT_SERVICE_PORT'),
     },
   });
-  app.useLogger( app.get(Logger));
+  app.useLogger(app.get(Logger));
   await app.startAllMicroservices();
 }
 bootstrap();

@@ -12,7 +12,7 @@ import { NotificationsService } from './notifications.service';
     ConfigModule.forRoot({
       isGlobal: true,
       validationSchema: Joi.object({
-        NOTIFICATIONS_PORT: Joi.number().required(),
+        PORT: Joi.number().required(),
       }),
     }),
   ],

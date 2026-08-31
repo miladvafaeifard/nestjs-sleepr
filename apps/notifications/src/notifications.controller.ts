@@ -1,22 +1,18 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, ValidationPipe, UsePipes } from '@nestjs/common';
 import { EventPattern, Payload } from '@nestjs/microservices';
 import {
-  PAYMENT_COMPLETED_EVENT,
-  type PaymentCompletedEventDto,
+  PAYMENT_COMPLETED_EVENT
 } from '@app/common';
 import { NotificationsService } from './notifications.service';
+import { HandlePaymentCompletedDto } from './dto/handle-payment-completed.dto';
 
 @Controller()
 export class NotificationsController {
   constructor(private readonly notificationsService: NotificationsService) {}
 
-  @Get()
-  getHello(): string {
-    return this.notificationsService.getHello();
-  }
-
+  @UsePipes(new ValidationPipe())
   @EventPattern(PAYMENT_COMPLETED_EVENT)
-  handlePaymentCompleted(@Payload() payment: PaymentCompletedEventDto): void {
+  handlePaymentCompleted(@Payload() payment: HandlePaymentCompletedDto): void {
     this.notificationsService.notifyPaymentCompleted(payment);
   }
 }

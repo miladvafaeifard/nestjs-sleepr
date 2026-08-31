@@ -1,4 +1,5 @@
 import { Inject, Injectable, Logger } from '@nestjs/common';
+import { catchError, take } from 'rxjs/operators';
 import { ConfigService } from '@nestjs/config';
 import { ClientProxy } from '@nestjs/microservices';
 import {
@@ -41,12 +42,17 @@ export class PaymentService {
       amount: paymentIntent.amount,
       currency: paymentIntent.currency,
       status: paymentIntent.status,
+      email: createPaymentDto.email,
+      text: `Payment of ${paymentIntent.amount / 100} ${paymentIntent.currency.toUpperCase()} completed successfully.`,
     };
 
-    this.notificationsClient.emit(PAYMENT_COMPLETED_EVENT, event).subscribe({
-      error: (error: unknown) =>
-        this.logger.error('Failed to emit payment completed event', error),
-    });
+    this.notificationsClient
+      .emit(PAYMENT_COMPLETED_EVENT, event)
+      .subscribe({
+        error: (error: unknown) => {
+          this.logger.error('Failed to emit payment completed event', error);
+        },
+      });
 
     return paymentIntent;
   }

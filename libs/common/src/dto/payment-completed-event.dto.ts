@@ -3,4 +3,6 @@ export interface PaymentCompletedEventDto {
   amount: number;
   currency: string;
   status: string;
+  text?: string;
+  email: string;
 }

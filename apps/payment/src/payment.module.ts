@@ -13,7 +13,7 @@ import { PaymentService } from './payment.service';
     ConfigModule.forRoot({
       isGlobal: true,
       validationSchema: Joi.object({
-        PAYMENTS_SERVICE_PORT: Joi.number().required(),
+        PAYMENT_SERVICE_PORT: Joi.number().required(),
         STRIPE_SECRET_KEY: Joi.string().required(),
         NOTIFICATIONS_SERVICE_HOST: Joi.string().required(),
         NOTIFICATIONS_SERVICE_PORT: Joi.number().required(),
